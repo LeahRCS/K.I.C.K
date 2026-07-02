@@ -3,6 +3,7 @@ import React from 'react';
 import { useQuery, useAction } from 'wasp/client/operations';
 import { getWorks, deleteWork, getHistory, approveWork, rejectWork } from 'wasp/client/operations';
 import { Link } from 'wasp/client/router';
+import { TearingBackground } from '../components/TearingBackground';
 
 export const DashboardPage = () => {
   const { data: works, isLoading: worksLoading } = useQuery(getWorks);
@@ -40,7 +41,8 @@ export const DashboardPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-noise text-neutral-900 dark:text-white p-6 md:p-16 font-sans selection:bg-[#d90429] selection:text-white">
+    <div className="min-h-screen bg-noise text-neutral-900 dark:text-white p-6 md:p-16 font-sans selection:bg-[#d90429] selection:text-white overflow-x-hidden relative">
+      <TearingBackground />
       <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10 md:mb-16 border-b-4 border-neutral-900 dark:border-white pb-6 md:pb-8">
         <div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-neutral-900 dark:text-white">

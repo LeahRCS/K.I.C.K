@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'wasp/client/router';
+import { TearingBackground } from '../components/TearingBackground';
 
 export const TermsPage = () => {
   return (
-    <div className="min-h-screen bg-noise text-neutral-900 dark:text-white p-6 md:p-16 font-sans selection:bg-[#d90429] selection:text-white">
+    <div className="min-h-screen bg-noise text-neutral-900 dark:text-white p-6 md:p-16 font-sans selection:bg-[#d90429] selection:text-white overflow-x-hidden relative">
+      <TearingBackground />
       <header className="mb-10 md:mb-16 pb-6 md:pb-8 border-b-4 border-neutral-900 dark:border-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-neutral-900 dark:text-white break-words">
           Termos de Uso

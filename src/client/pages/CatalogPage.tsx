@@ -5,6 +5,7 @@ import { getApprovedWorks, getCategories, toggleFavorite, getFavorites } from 'w
 import { useAuth } from 'wasp/client/auth';
 import { Link } from 'wasp/client/router';
 import { Dialog } from '../../shared/components/Dialog';
+import { TearingBackground } from '../components/TearingBackground';
 
 export const CatalogPage = () => {
   const { data: user } = useAuth();
@@ -60,7 +61,8 @@ export const CatalogPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-noise text-neutral-900 dark:text-white p-6 md:p-16 font-sans selection:bg-[#d90429] selection:text-white relative">
+    <div className="min-h-screen bg-noise text-neutral-900 dark:text-white p-6 md:p-16 font-sans selection:bg-[#d90429] selection:text-white relative overflow-x-hidden">
+      <TearingBackground />
       {user && user.strikes > 0 && (
         <div className="bg-[#d90429] text-white p-4 font-bold text-center uppercase tracking-widest text-sm md:text-base border-4 border-neutral-900 dark:border-white mb-8 brutalist-border shadow-[4px_4px_0_0_#171717] dark:shadow-[4px_4px_0_0_#fff] flex flex-col gap-2">
           <p>⚠️ ATENÇÃO: Você possui submissões rejeitadas ({user.strikes} strikes).</p>
