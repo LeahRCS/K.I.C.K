@@ -1,0 +1,90 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id          String     @id @default(uuid())
+  username    String     @unique
+  role        String     @default("USER") // ADMIN, CURATOR, USER
+  strikes     Int        @default(0)
+  createdAt   DateTime   @default(now())
+
+  favorites        Favorite[]
+  historyLogs      History[]
+  submittedWorks   Work[]     @relation("WorkSubmitter")
+}
+
+model Work {
+  id                 String     @id @default(uuid())
+  title              String
+  description        String
+  authorName         String?
+  creationDate       DateTime?
+  imageUrl           String?
+  relatedFileUrl     String?
+  historicalLocation String?
+  tags               String     @default("[]") // JSON array em string
+  status             String     @default("PENDING") // PENDING, APPROVED, REJECTED
+  
+  submitterId        String?
+  submitter          User?      @relation("WorkSubmitter", fields: [submitterId], references: [id])
+
+  categoryId         String
+  category           Category   @relation(fields: [categoryId], references: [id])
+  
+  collectionId       String?
+  collection         Collection? @relation(fields: [collectionId], references: [id])
+  
+  favoritedBy        Favorite[]
+  historyLogs        History[]
+  
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+}
+
+model Category {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?
+  works       Work[]
+}
+
+model Collection {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  works       Work[]
+  createdAt   DateTime @default(now())
+}
+
+model Favorite {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  work      Work     @relation(fields: [workId], references: [id])
+  workId    String
+  createdAt DateTime @default(now())
+  
+  @@unique([userId, workId])
+}
+
+model History {
+  id         String   @id @default(uuid())
+  action     String   // "CREATED", "UPDATED", "DELETED"
+  entityType String   // "WORK", "CATEGORY", "COLLECTION"
+  entityId   String
+  details    String?  // JSON string
+  
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  
+  work       Work?    @relation(fields: [workId], references: [id], onDelete: SetNull)
+  workId     String?
+  
+  createdAt  DateTime @default(now())
+}

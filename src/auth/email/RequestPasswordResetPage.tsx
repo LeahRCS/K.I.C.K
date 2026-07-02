@@ -1,0 +1,11 @@
+// @ts-nocheck
+import { ForgotPasswordForm } from "wasp/client/auth";
+import { AuthLayout } from "../AuthLayout";
+
+export function RequestPasswordResetPage() {
+  return (
+    <AuthLayout title="Recuperar Senha">
+      <ForgotPasswordForm />
+    </AuthLayout>
+  );
+}

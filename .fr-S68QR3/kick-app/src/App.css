@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --text-tiny: 0.625rem;
+  --text-tiny--line-height: 1rem;
+
+  /* Brutalist Palette */
+  --color-primary-50: #fafafa;
+  --color-primary-100: #f5f5f5;
+  --color-primary-200: #e5e5e5;
+  --color-primary-300: #d4d4d4;
+  --color-primary-400: #a3a3a3;
+  --color-primary-500: #737373;
+  --color-primary-600: #525252;
+  --color-primary-700: #404040;
+  --color-primary-800: #262626;
+  --color-primary-900: #171717;
+  --color-primary-950: #0a0a0a;
+
+  /* Accent Red */
+  --color-accent: #d90429;
+
+  /* Custom SVG Cursors based on the Concept Art */
+  --cursor-default: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M12 12 L24 38 L28 26 L40 26 Z' fill='%23111' stroke='%23d90429' stroke-width='8' stroke-linejoin='round'/%3E%3Cpath d='M12 12 L24 38 L28 26 L40 26 Z' fill='%23111' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E") 12 12, auto;
+  --cursor-pointer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='-4 -4 40 40'%3E%3Cpath d='M14 1.5 C11.2 1.5 9 3.7 9 6.5 L9 15.3 C8.4 14.8 7.6 14.5 6.7 14.5 C4.1 14.5 2 16.6 2 19.2 C2 20.5 2.5 21.6 3.3 22.5 L10.6 30.6 C11.9 32 13.7 32.8 15.6 32.8 L24.5 32.8 C28.6 32.8 32 29.4 32 25.3 L32 15 C32 13.3 30.7 12 29 12 C28.7 12 28.5 12 28.2 12.1 C27.7 10.6 26.2 9.5 24.5 9.5 C24.1 9.5 23.8 9.5 23.4 9.7 C22.8 8.4 21.5 7.5 20 7.5 C19.7 7.5 19.3 7.6 19 7.7 L19 6.5 C19 3.7 16.8 1.5 14 1.5 Z' fill='%23111' stroke='%23d90429' stroke-width='6' stroke-linejoin='round'/%3E%3Cpath d='M14 1.5 C11.2 1.5 9 3.7 9 6.5 L9 15.3 C8.4 14.8 7.6 14.5 6.7 14.5 C4.1 14.5 2 16.6 2 19.2 C2 20.5 2.5 21.6 3.3 22.5 L10.6 30.6 C11.9 32 13.7 32.8 15.6 32.8 L24.5 32.8 C28.6 32.8 32 29.4 32 25.3 L32 15 C32 13.3 30.7 12 29 12 C28.7 12 28.5 12 28.2 12.1 C27.7 10.6 26.2 9.5 24.5 9.5 C24.1 9.5 23.8 9.5 23.4 9.7 C22.8 8.4 21.5 7.5 20 7.5 C19.7 7.5 19.3 7.6 19 7.7 L19 6.5 C19 3.7 16.8 1.5 14 1.5 Z' fill='%23111' stroke='%23fff' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 22 7, pointer;
+  --cursor-text: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M16 10 L32 10 L32 14 L26 14 L26 34 L32 34 L32 38 L16 38 L16 34 L22 34 L22 14 L16 14 Z' fill='%23111' stroke='%23d90429' stroke-width='6' stroke-linejoin='round'/%3E%3Cpath d='M16 10 L32 10 L32 14 L26 14 L26 34 L32 34 L32 38 L16 38 L16 34 L22 34 L22 14 L16 14 Z' fill='%23111' stroke='%23fff' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E") 24 24, text;
+}
+
+body {
+  @apply has-[dialog:open]:overflow-hidden;
+  background-color: #f5f5f5;
+  color: #111;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  cursor: var(--cursor-default);
+}
+
+/* Global Cursor Overrides */
+a, button, [role="button"], .brutalist-border {
+  cursor: var(--cursor-pointer) !important;
+}
+a *, button *, [role="button"] * {
+  cursor: inherit !important;
+}
+input, textarea, p, h1, h2, h3, h4, h5, h6, span, li, td, th {
+  cursor: var(--cursor-text);
+}
+input, textarea, select {
+  color: #111 !important; /* Force dark text in inputs globally to prevent invisible text */
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0a0a0a;
+    color: #f5f5f5;
+  }
+}
+
+/* Subtle Noise Texture for that "Cult/Print" feel without being overwhelming */
+.bg-noise {
+  background-color: #f5f5f5;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+/* Dark Mode Noise */
+@media (prefers-color-scheme: dark) {
+  .bg-noise {
+    background-color: #0a0a0a;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+  }
+}
+
+/* Brutalist UI Elements */
+.brutalist-border {
+  border: 3px solid #111;
+  box-shadow: 4px 4px 0px 0px #111;
+  transition: all 0.2s ease;
+}
+
+.brutalist-border:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #111;
+}
+
+.brutalist-border:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px #111;
+}
+
+@media (prefers-color-scheme: dark) {
+  .brutalist-border {
+    border-color: #f5f5f5;
+    box-shadow: 4px 4px 0px 0px #f5f5f5;
+  }
+  .brutalist-border:hover {
+    box-shadow: 6px 6px 0px 0px #f5f5f5;
+  }
+  .brutalist-border:active {
+    box-shadow: 0px 0px 0px 0px #f5f5f5;
+  }
+}
+
+/* Subtle torn edge for a sophisticated "zine" hint */
+.torn-edge {
+  clip-path: polygon(0 0, 100% 0, 99% 100%, 1% 98%);
+}
+
+@utility card {
+  @apply rounded-none border-2 border-neutral-900 dark:border-neutral-100 bg-white dark:bg-neutral-900 shadow-none transition-all duration-200;
+}
+
+@utility label {
+  @apply text-sm font-bold text-neutral-900 dark:text-neutral-100 uppercase tracking-wider;
+}
