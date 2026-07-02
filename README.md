@@ -14,7 +14,7 @@
 
 ## 📖 Sobre o Projeto
 
-O **K.I.C.K** (*Keep It Cult, Kiddo*) é uma plataforma curatorial e de agregação de conteúdo para gerenciamento de acervo cultural. Nascido como um esforço acadêmico para imortalizar o efêmero, este sistema estrutura, organiza e preserva a memória da cultura — mas estritamente sob as regras da nossa moderação. 
+O **K.I.C.K** (*Keep It Cult, Kiddo*) é uma plataforma curatorial e de agregação de conteúdo para gerenciamento de acervo cultural. Nascido como um esforço acadêmico para imortalizar o efêmero, este sistema estrutura, organiza e preserva a memória da cultura — mas sem causar tanta polêmica (ainda). 
 
 Com uma estética brutalista e uma arquitetura robusta por baixo dos panos, o K.I.C.K prova que arquivamento histórico não precisa ser entediante. Pelo contrário: se a sua submissão não estiver de acordo com os termos de uso, os curadores lhe dão um belo "strike" e você corre o risco de ser expurgado permanentemente do acervo! Do contrário, vai compartilhar com outros usuários o que VOCÊ considera cultura! 
 
