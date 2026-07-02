@@ -18,7 +18,7 @@ O **K.I.C.K** (*Keep It Cult, Kiddo*) é uma plataforma acadêmica e curatorial 
 
 Com uma estética brutalista e uma arquitetura robusta por baixo dos panos, o K.I.C.K prova que arquivamento histórico não precisa ser entediante. Pelo contrário: se a sua submissão não estiver de acordo com os termos de uso, os curadores lhe dão um belo "strike" e você corre o risco de ser expurgado permanentemente do acervo! Do contrário, vai compartilhar com outros usuários o que VOCÊ considera cultura! 
 
-> **Curadoria com Mão de Ferro** — Qualquer visitante pode consultar o acervo. Usuários logados podem submeter obras (HQs, Filmes, Fotografia, Memes e Artefatos Obscuros). Porém, absolutamente nada vai ao ar sem a bênção de um Administrador. Não subimos nada "cegamente".
+> **Curadoria com Mão de Ferro** — Qualquer visitante pode consultar o acervo. Usuários logados podem submeter obras (HQs, Filmes, Fotografia, Memes, etc). Porém, absolutamente nada vai ao ar sem a aprovação de um Administrador. Não subimos nada "cegamente" justamente porque para nós, você decide o que é cultura e nós garantimos que a comunidade permaneça segura.
 
 ---
 
